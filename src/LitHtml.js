@@ -1,5 +1,6 @@
 const Lit = require("lit-html");
 
+// Adapted from https://gist.github.com/malko/b8a432bbb2198ca5d38cd3dc27d40f24
 exports.mkHtmlTemplate = template => () => {
   return params =>
     new Function(
