@@ -13,3 +13,16 @@ exports.render_ = el => tpl => params => () => {
   params.html = Lit.html;
   Lit.render(tpl(params), el);
 };
+
+exports.mkSvgTemplate = template => () => {
+  return params =>
+    new Function(
+      "{" + Object.keys(params).join(",") + "}",
+      "return svg`" + template + "`"
+    )(params);
+};
+
+exports.renderSvg_ = el => tpl => params => () => {
+  params.svg = Lit.svg;
+  Lit.render(tpl(params), el);
+};
