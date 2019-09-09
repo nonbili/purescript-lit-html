@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "postinstall": "bower install",
+    "start": "parcel index.html"
+  },
+  "dependencies": {
+    "lit-html": "^1.1.2"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.3"
+  }
+}
