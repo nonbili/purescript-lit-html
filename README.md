@@ -6,7 +6,7 @@ A PureScript wrapper of [lit-html](https://github.com/Polymer/lit-html).
 
 ## Usage
 
-```
+```purescript
 import LitHtml as LitHtml
 import Web.DOM (Element)
 
@@ -21,6 +21,6 @@ renderTitle el =
 ```
 cd example
 yarn
-pulp -w build -I ../src
+spago build -w
 yarn start
 ```

@@ -48,6 +48,12 @@ renderSvgPath docNode = do
   getElementById "svg-path" docNode >>= traverse_ \el -> do
     LitHtml.renderSvg el tpl {}
 
+renderButton :: NonElementParentNode -> Effect Unit
+renderButton docNode = do
+  tpl <- LitHtml.mkHtmlTemplate """<button @click=${onClick}>Click</button>"""
+  getElementById "button" docNode >>= traverse_ \el -> do
+    LitHtml.render' el tpl { onClick: Console.log "Button clicked."}
+
 main :: Effect Unit
 main = do
   docNode <- toNonElementParentNode <$> (window >>= document)
@@ -55,3 +61,4 @@ main = do
   renderNestedRecord docNode
   renderSvg docNode
   renderSvgPath docNode
+  renderButton docNode
