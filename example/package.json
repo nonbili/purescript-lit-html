@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "postinstall": "bower install",
     "start": "parcel index.html"
   },
   "dependencies": {
